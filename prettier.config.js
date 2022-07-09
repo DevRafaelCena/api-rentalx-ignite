@@ -1,0 +1,3 @@
+modules.export = {
+    singleQuote: false,
+}
