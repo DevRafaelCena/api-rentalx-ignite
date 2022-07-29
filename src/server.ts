@@ -10,5 +10,5 @@ app.use('/categories',categoriesRoutes);
 app.use('/specifications', specificationRoutes);
 
 app.listen(3000, () => {
-  console.log('Server is running on port 300');
+  console.log('Server is running on port 3000');
 })
