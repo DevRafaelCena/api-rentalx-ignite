@@ -8,5 +8,73 @@
             "name": "Rafael Cena",
             "url": "https://github.com/DevRafaelCena"
         }
+    },
+    "paths":{
+        "/categories":{
+            "post":{
+                "tags": ["Categories"],
+                "summary": "Create a new category",
+                "description": "Create a new category",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "New Category"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "example": "This is a new category"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "201":{
+                        "description": "Created"
+                    },
+                    "500":{
+                        "description": "Category already exists"
+                    }
+                }
+               
+                
+            },
+            "get":{
+                "tags": ["Categories"],
+                "summary": "Get all categories",
+                "description": "Get all categories",
+                "responses":{
+                    "200":{
+                        "description": "Success",
+                        "content":{
+                            "application/json":{
+                                "schema" :{
+                                    "type" : "array",
+                                    "items":{
+                                        "type": "object",
+                                        "properties":{
+                                            "name":{
+                                                "type": "string",
+                                                "example": "New Category"
+                                            },
+                                            "description":{
+                                                "type": "string",
+                                                "example": "This is a new category"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
