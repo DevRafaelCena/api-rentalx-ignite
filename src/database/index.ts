@@ -2,11 +2,11 @@ import { DataSource} from "typeorm"
 
 const dataSource = new  DataSource({
     type: "postgres",
-    host: "database",
+    host: "database_ignite",
     port: 5432,
-    username: "postgres",
-    password: "postgres",
-    database: "rentalx",
+    username: "docker",
+    password: "ignite",
+    database: "rentx",
 
 })
 
