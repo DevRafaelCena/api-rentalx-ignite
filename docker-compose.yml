@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.9'
 
 services:
   database_ignite:
@@ -12,15 +12,19 @@ services:
       - POSTGRES_PASSWORD=ignite
       - POSTGRES_DB=rentx
     volumes:
-      - pgdata:/data/postgres   
+      - pgdata:/data/postgres       
+    
   app:
     build: .
     container_name: rentx
+    depends_on:
+      - database_ignite
     ports:
       - "3000:3000"
+    links: 
+      - database_ignite
     volumes:
-      - .:/usr/app    
-
+      - .:/usr/app  
 
 volumes:
   pgdata:

@@ -2,8 +2,12 @@ import express from 'express';
 import { router } from './routes';
 import swaggerUi from 'swagger-ui-express'
 import swaggerFile from './swagger.json'
+import "reflect-metadata";
 
-import "./database";
+import { createConnection } from "./database/";
+
+createConnection() // Esse "then" você pode apagar, se quiser
+  .then(() => console.log('connected to database')).catch(err => console.log(err));
 
 const app = express();
 app.use(express.json());

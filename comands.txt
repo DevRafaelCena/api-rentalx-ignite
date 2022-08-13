@@ -1,2 +1,7 @@
 sudo docker-compose up --force-recreate
 
+
+criar migration 
+yarn typeorm migration:create ./src/database/migration/NomeMigration
+
+yarn typeorm -d ./src/database/index.ts  migration:run
